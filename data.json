@@ -6,8 +6,8 @@
       "nombre": "Lucas Zalazar",
       "equipo": "Red Bull Racing",
       "puntos": 77,
-      "imagen": "lucas zalazar.jpg",
-      "poster": "oster_lucas.jpg",
+      "imagen": "lucas zalazar.png",
+      "poster": "poster_lucas.png",
       "destacado": true,
       "estado": "activo"
     },
@@ -16,8 +16,8 @@
       "nombre": "Máximo Zapata",
       "equipo": "Ferrari",
       "puntos": 22,
-      "imagen": "maximo zapata.jpg",
-      "poster": "poster_zapata.jpg",
+      "imagen": "maximo zapata.png",
+      "poster": "poster_zapata.png",
       "destacado": false,
       "estado": "activo"
     },
@@ -26,8 +26,8 @@
       "nombre": "Bruno Quercia",
       "equipo": "McLaren",
       "puntos": 15,
-      "imagen": "bruno quercia.jpg",
-      "poster": "poster_bruno.jpg",
+      "imagen": "bruno quercia.png",
+      "poster": "poster_bruno.png",
       "destacado": false,
       "estado": "activo"
     },
@@ -36,8 +36,8 @@
       "nombre": "Bruno Gonzalez",
       "equipo": "Red Bull Racing",
       "puntos": 10,
-      "imagen": "gonzalez.jpg",
-      "poster": "poster_gonzalez.jpg",
+      "imagen": "gonzalez.png",
+      "poster": "poster_gonzalez.png",
       "destacado": false,
       "estado": "activo"
     },
@@ -46,8 +46,8 @@
       "nombre": "Nacho Quiróz",
       "equipo": "Sauber",
       "puntos": 0,
-      "imagen": "nacho quiroz.jpg",
-      "poster": "poster_nacho.jpg",
+      "imagen": "nacho quiroz.png",
+      "poster": "poster_nacho.png",
       "destacado": false,
       "estado": "def"
     }
