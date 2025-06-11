@@ -6,8 +6,8 @@
       "nombre": "Lucas Zalazar",
       "equipo": "Red Bull Racing",
       "puntos": 77,
-      "imagen": "resources/lucas zalazar.jpg",
-      "poster": "resources/poster_lucas.jpg",
+      "imagen": "lucas zalazar.jpg",
+      "poster": "oster_lucas.jpg",
       "destacado": true,
       "estado": "activo"
     },
