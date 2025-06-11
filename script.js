@@ -31,220 +31,181 @@ async function cargarDatos() {
         if (document.getElementById('posters-gallery')) { // Este ID es para la nueva página de 'galeria_posters.html'
             renderGaleriaPosters(); // Nueva función para los posters
         }
-        if (document.getElementById('driver-list') && document.getElementById('highlighted-driver')) {
-            renderTablaPuntajes();
+        if (document.getElementById('driver-list')) { // Este ID es para la página de 'puntajes.html'
+            renderDriverStandings(); // <--- Llamamos a la función de renderizado de puntajes aquí
         }
 
     } catch (error) {
         console.error('Error al cargar los datos:', error);
-        document.querySelectorAll('main section').forEach(section => {
-            if (section.querySelector('p')) {
-                section.querySelector('p').textContent = 'Error al cargar los datos. Por favor, verifica el archivo data.json.';
-            }
-        });
     }
 }
 
-// Función para renderizar el piloto destacado en la página de inicio
+// Función para renderizar el piloto destacado en index.html
 function renderPilotoDestacado() {
-    const pilotoDestacadoCard = document.getElementById('piloto-destacado-card');
-    if (!pilotoDestacadoCard) return;
+    const destacadoCard = document.getElementById('piloto-destacado-card');
+    if (!destacadoCard) return;
 
-    const pilotoDestacado = appData.pilotos.find(p => p.destacado);
+    const piloto = appData.pilotos.find(p => p.destacado);
 
-    if (pilotoDestacado) {
-        pilotoDestacadoCard.innerHTML = `
-            <img src="${pilotoDestacado.imagen}" alt="${pilotoDestacado.nombre}">
-            <div class="piloto-info">
-                <h3>${pilotoDestacado.nombre}</h3>
-                <p>Equipo: ${pilotoDestacado.equipo}</p>
-                <p>Puntos: ${pilotoDestacado.puntos}</p>
+    if (piloto) {
+        destacadoCard.innerHTML = `
+            <img src="${piloto.imagen}" alt="${piloto.nombre}" class="driver-img">
+            <div class="driver-info">
+                <h3>${piloto.nombre}</h3>
+                <p>Equipo: ${piloto.equipo}</p>
+                <p>Puntos: ${piloto.puntos}</p>
             </div>
         `;
     } else {
-        pilotoDestacadoCard.innerHTML = '<p>No se encontró un piloto destacado.</p>';
+        destacadoCard.innerHTML = '<p>No hay piloto destacado en este momento.</p>';
     }
 }
 
-// Función para renderizar las últimas noticias en la página de inicio
+// Función para renderizar las últimas noticias en index.html
 function renderUltimasNoticias() {
     const noticiasGrid = document.getElementById('noticias-grid');
     if (!noticiasGrid) return;
 
-    noticiasGrid.innerHTML = ''; // Limpiar contenido existente
+    noticiasGrid.innerHTML = '';
+    const ultimas3Noticias = appData.noticias.slice(0, 3); // Muestra las 3 primeras noticias
 
-    if (!appData.noticias || appData.noticias.length === 0) {
-        noticiasGrid.innerHTML = '<p>No hay noticias para mostrar.</p>';
-        return;
-    }
-
-    const noticiasAMostrar = appData.noticias.slice(0, 2);
-
-    noticiasAMostrar.forEach(noticia => {
+    ultimas3Noticias.forEach(noticia => {
         const newsCard = document.createElement('div');
-        newsCard.className = 'news-card';
+        newsCard.classList.add('news-card');
         newsCard.innerHTML = `
             <h3>${noticia.titulo}</h3>
-            <p class="news-meta">Fecha: ${noticia.fecha} | Autor: ${noticia.autor}</p>
+            <p class="news-meta">Por ${noticia.autor} | ${noticia.fecha}</p>
             <div class="news-content-wrapper">
-                <p class="short-content">
-                    ${noticia.contenidoCorto}
-                </p>
-                <p class="full-content hidden">
-                    ${noticia.contenidoCompleto}
-                </p>
+                <p class="short-content">${noticia.contenidoCorto}</p>
+                <p class="full-content hidden">${noticia.contenidoCompleto}</p>
                 <button class="toggle-content-btn">Ver más</button>
             </div>
         `;
         noticiasGrid.appendChild(newsCard);
     });
-
-    addToggleContentListeners(noticiasGrid);
+    addToggleContentListeners(noticiasGrid); // Añadir listeners para los botones "Ver más"
 }
 
-// Función para renderizar TODAS las noticias en la página de noticias
+// Función para renderizar todas las noticias en noticias.html
 function renderAllNoticias() {
     const allNewsContainer = document.getElementById('all-news-container');
     if (!allNewsContainer) return;
 
-    allNewsContainer.innerHTML = ''; // Limpiar contenido existente
-
-    if (!appData.noticias || appData.noticias.length === 0) {
-        allNewsContainer.innerHTML = '<p>No hay noticias para mostrar.</p>';
-        return;
-    }
-
-    const todasLasNoticias = [...appData.noticias].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-    todasLasNoticias.forEach(noticia => {
-        const newsArticle = document.createElement('div');
-        newsArticle.className = 'news-article';
-        newsArticle.innerHTML = `
+    allNewsContainer.innerHTML = '';
+    appData.noticias.forEach(noticia => {
+        const newsCard = document.createElement('div');
+        newsCard.classList.add('news-card');
+        newsCard.innerHTML = `
             <h3>${noticia.titulo}</h3>
-            <p class="news-meta">Fecha: ${noticia.fecha} | Autor: ${noticia.autor}</p>
+            <p class="news-meta">Por ${noticia.autor} | ${noticia.fecha}</p>
             <div class="news-content-wrapper">
-                <p class="short-content">
-                    ${noticia.contenidoCorto}
-                </p>
-                <p class="full-content hidden">
-                    ${noticia.contenidoCompleto}
-                </p>
+                <p class="short-content">${noticia.contenidoCorto}</p>
+                <p class="full-content hidden">${noticia.contenidoCompleto}</p>
                 <button class="toggle-content-btn">Ver más</button>
             </div>
         `;
-        allNewsContainer.appendChild(newsArticle);
+        allNewsContainer.appendChild(newsCard);
     });
-
-    addToggleContentListeners(allNewsContainer);
+    addToggleContentListeners(allNewsContainer); // Añadir listeners para los botones "Ver más"
 }
 
-// NUEVA FUNCIÓN: para renderizar las FOTOS DE PERFIL de los pilotos en corredores.html
+// Función para renderizar las tarjetas de perfil de corredores en corredores.html
 function renderAllPilotosProfileCards() {
     const racersGallery = document.getElementById('racers-gallery');
     if (!racersGallery) return;
 
-    racersGallery.innerHTML = ''; // Limpiar contenido existente
-
-    if (!appData.pilotos || appData.pilotos.length === 0) {
-        racersGallery.innerHTML = '<p>No hay corredores para mostrar.</p>';
-        return;
-    }
-
-    const pilotosOrdenados = [...appData.pilotos].sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-    pilotosOrdenados.forEach(piloto => {
+    racersGallery.innerHTML = '';
+    appData.pilotos.forEach(piloto => {
         const racerCard = document.createElement('div');
-        racerCard.className = 'racer-profile-card'; // Clase diferente para los perfiles
+        racerCard.classList.add('racer-card');
         racerCard.innerHTML = `
-            <img src="${piloto.imagen}" alt="${piloto.nombre} perfil">
+            <img src="${piloto.imagen}" alt="${piloto.nombre}">
             <h3>${piloto.nombre}</h3>
-            <p>Equipo: ${piloto.equipo}</p>
+            <p>${piloto.equipo}</p>
+            <p>${piloto.puntos} Puntos</p>
         `;
         racersGallery.appendChild(racerCard);
     });
 }
 
-// NUEVA FUNCIÓN: para renderizar los POSTERS en galeria_posters.html
+// Función para renderizar la galería de posters en galeria_posters.html
 function renderGaleriaPosters() {
     const postersGallery = document.getElementById('posters-gallery');
     if (!postersGallery) return;
 
-    postersGallery.innerHTML = ''; // Limpiar contenido existente
-
-    if (!appData.pilotos || appData.pilotos.length === 0) {
-        postersGallery.innerHTML = '<p>No hay posters para mostrar.</p>';
-        return;
-    }
-
-    // Filtramos solo los pilotos que tienen un 'poster' definido en data.json
-    const pilotosConPoster = appData.pilotos.filter(piloto => piloto.poster);
-    const pilotosOrdenados = [...pilotosConPoster].sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-
-    if (pilotosConPoster.length === 0) {
-        postersGallery.innerHTML = '<p>Todavía no hay posters disponibles. ¡Volvé pronto!</p>';
-        return;
-    }
-
-    pilotosOrdenados.forEach(piloto => {
-        const posterItem = document.createElement('div');
-        posterItem.className = 'poster-item'; // Clase para cada poster
-        posterItem.innerHTML = `
-            <img src="${piloto.poster}" alt="Poster de ${piloto.nombre}">
-            <p class="poster-title">${piloto.nombre}</p>
-        `;
-        postersGallery.appendChild(posterItem);
+    postersGallery.innerHTML = '';
+    appData.pilotos.forEach(piloto => {
+        if (piloto.poster) { // Solo mostrar si tiene poster
+            const posterItem = document.createElement('div');
+            posterItem.classList.add('poster-item');
+            posterItem.innerHTML = `
+                <img src="${piloto.poster}" alt="Poster de ${piloto.nombre}">
+                <div class="poster-title">${piloto.nombre} - ${piloto.equipo}</div>
+            `;
+            postersGallery.appendChild(posterItem);
+        }
     });
 }
 
 
-// Función para renderizar la tabla de puntajes
-function renderTablaPuntajes() {
+// --- Función para renderizar la tabla de posiciones en puntajes.html ---
+function renderDriverStandings() {
     const driverList = document.getElementById('driver-list');
     const highlightedDriver = document.getElementById('highlighted-driver');
     if (!driverList || !highlightedDriver) return;
 
-    driverList.innerHTML = ''; // Limpiar contenido existente
-    highlightedDriver.innerHTML = ''; // Limpiar contenido existente
+    driverList.innerHTML = '';
+    highlightedDriver.innerHTML = ''; // Limpiar el piloto destacado de la página de puntajes
 
-    if (!appData.pilotos || appData.pilotos.length === 0) {
-        driverList.innerHTML = '<p>No hay pilotos para mostrar en la tabla.</p>';
-        highlightedDriver.innerHTML = '<p>No se encontró un piloto destacado.</p>';
-        return;
-    }
+    // Separar pilotos activos y DEF
+    const activePilotos = appData.pilotos.filter(piloto => piloto.estado === 'activo');
+    const defPilotos = appData.pilotos.filter(piloto => piloto.estado === 'def');
 
-    const pilotosOrdenados = [...appData.pilotos].sort((a, b) => b.puntos - a.puntos);
+    // Ordenar pilotos activos por puntos de mayor a menor
+    activePilotos.sort((a, b) => b.puntos - a.puntos);
 
-    const topPiloto = pilotosOrdenados[0];
-    if (topPiloto) {
+    // Los pilotos DEF se ordenan alfabéticamente y se añaden al final
+    const sortedPilotos = activePilotos.concat(defPilotos.sort((a, b) => a.nombre.localeCompare(b.nombre)));
+
+    // Renderizar el piloto destacado (el primero de los activos si existe)
+    if (activePilotos.length > 0) {
+        const topPiloto = activePilotos[0];
         highlightedDriver.innerHTML = `
-            <span class="pos">${1}°</span>
+            <img src="${topPiloto.imagen}" alt="${topPiloto.nombre}" class="driver-highlight-img">
             <div class="content">
-                <img src="${topPiloto.imagen}" alt="${topPiloto.nombre}" class="driver-highlight-img"> <span class="name">${topPiloto.nombre}</span>
-                <span class="team">${topPiloto.equipo}</span>
-                <span class="points">${topPiloto.puntos} PTS</span>
+                <h3>Líder Actual: ${topPiloto.nombre}</h3>
+                <p>Equipo: ${topPiloto.equipo}</p>
+                <p>Puntos: <span class="highlight-points">${topPiloto.puntos}</span></p>
             </div>
         `;
+    } else {
+        highlightedDriver.innerHTML = '<p>No hay pilotos activos para destacar en este momento.</p>';
     }
 
-    pilotosOrdenados.forEach((piloto, index) => {
+
+    // Renderizar la lista completa de pilotos
+    sortedPilotos.forEach((piloto, index) => {
         const li = document.createElement('li');
-        if (index === 0) {
-            li.classList.add('top-driver');
+        // Añadir una clase si el piloto está en estado 'def'
+        if (piloto.estado === 'def') {
+            li.classList.add('def-driver');
         }
+
         li.innerHTML = `
-            <span class="pos">${index + 1}°</span>
+            <span class="pos">${piloto.estado === 'def' ? '-' : (activePilotos.indexOf(piloto) !== -1 ? activePilotos.indexOf(piloto) + 1 : '-') }°</span>
             <div class="info">
-                <img src="${piloto.imagen}" alt="${piloto.nombre}" class="driver-list-img"> <span class="name">${piloto.nombre}</span>
+                <img src="${piloto.imagen}" alt="${piloto.nombre}" class="driver-list-img">
+                <span class="name">${piloto.nombre}</span>
                 <span class="team">${piloto.equipo}</span>
             </div>
-            <span class="points">${piloto.puntos} PTS</span>
+            <span class="points">${piloto.estado === 'def' ? 'DEF' : `${piloto.puntos} PTS`}</span>
         `;
         driverList.appendChild(li);
     });
 }
 
-// --- Función común para los botones "Ver más/menos" ---
+
+// --- Función común para los botones "Ver más/menos" ---\
 function addToggleContentListeners(container) {
     container.querySelectorAll('.toggle-content-btn').forEach(button => {
         button.addEventListener('click', function() {
