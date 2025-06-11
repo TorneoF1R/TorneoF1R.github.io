@@ -1,0 +1,284 @@
+/* Variables para el editor, siguiendo la paleta de F1 pero con un toque más de panel */
+:root {
+    --editor-bg-dark: #1a1a1a;
+    --editor-bg-medium: #2a2a2a;
+    --editor-bg-light: #3a3a3a;
+    --editor-text-primary: #e0e0e0;
+    --editor-text-secondary: #a0a0a0;
+    --editor-accent-red: #DC143C; /* Rojo F1 */
+    --editor-accent-red-hover: #FF4444;
+    --editor-btn-green: #4CAF50;
+    --editor-btn-green-hover: #45a049;
+    --editor-btn-blue: #007bff;
+    --editor-btn-blue-hover: #0056b3;
+    --editor-btn-red: #dc3545;
+    --editor-btn-red-hover: #c82333;
+    --editor-border-color: #555;
+    --editor-shadow: rgba(0, 0, 0, 0.5);
+    --editor-success: #28a745;
+    --editor-error: #dc3545;
+    --editor-info: #17a2b8;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--editor-bg-dark); /* Fondo oscuro */
+    color: var(--editor-text-primary);
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--editor-accent-red);
+    font-weight: 700;
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los paneles se envuelvan en pantallas pequeñas */
+    gap: 30px;
+    max-width: 1200px; /* Aumenta el ancho máximo para más espacio */
+    margin: 0 auto;
+    justify-content: center; /* Centra los paneles */
+}
+
+.panel {
+    background-color: var(--editor-bg-medium);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 16px var(--editor-shadow);
+    flex: 1; /* Permite que los paneles crezcan y ocupen el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para que no se deformen demasiado */
+    max-width: 550px; /* Ancho máximo para mantener un buen diseño */
+}
+
+.panel h2 {
+    color: var(--editor-text-primary);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--editor-border-color);
+    padding-bottom: 10px;
+    font-size: 1.8em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--editor-text-secondary);
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: calc(100% - 20px); /* Ajusta el ancho para el padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--editor-border-color);
+    border-radius: 8px;
+    background-color: var(--editor-bg-light);
+    color: var(--editor-text-primary);
+    font-size: 1em;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+}
+
+.btn-add, .btn-update, .btn-delete, .btn-cancel {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+.btn-add {
+    background-color: var(--editor-btn-green);
+    color: white;
+}
+.btn-add:hover {
+    background-color: var(--editor-btn-green-hover);
+}
+
+.btn-update {
+    background-color: var(--editor-btn-blue);
+    color: white;
+}
+.btn-update:hover {
+    background-color: var(--editor-btn-blue-hover);
+}
+
+.btn-delete {
+    background-color: var(--editor-btn-red);
+    color: white;
+}
+.btn-delete:hover {
+    background-color: var(--editor-btn-red-hover);
+}
+
+.btn-cancel {
+    background-color: var(--editor-text-secondary); /* Gris más claro */
+    color: var(--editor-text-primary);
+}
+.btn-cancel:hover {
+    background-color: #888;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.item-list li {
+    background-color: var(--editor-bg-light);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.item-list li span {
+    flex-grow: 1;
+    margin-right: 10px;
+    color: var(--editor-text-primary);
+}
+
+.item-list .item-actions button {
+    margin-left: 5px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.json-output-panel {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#json-output-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#json-output {
+    width: calc(100% - 20px);
+    height: 300px;
+    padding: 15px;
+    border: 1px solid var(--editor-border-color);
+    border-radius: 8px;
+    background-color: #121212; /* Fondo bien oscuro para el JSON */
+    color: #0f0; /* Color verde hacker para el JSON */
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+#message {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: none; /* Oculto por defecto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#message.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: var(--editor-success);
+}
+
+#message.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: var(--editor-error);
+}
+
+#message.info {
+    background-color: rgba(23, 162, 184, 0.2);
+    color: var(--editor-info);
+}
+
+/* Responsividad general */
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .panel {
+        width: 100%;
+        max-width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    .panel h2 {
+        font-size: 1.6em;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+    .btn-add, .btn-update, .btn-delete, .btn-cancel {
+        width: 100%;
+    }
+    .item-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .item-list li span {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    .item-list .item-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .panel {
+        padding: 15px;
+    }
+    .panel h2 {
+        font-size: 1.4em;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form textarea {
+        width: calc(100% - 10px);
+    }
+    #json-output {
+        height: 200px;
+        font-size: 0.8em;
+    }
+}

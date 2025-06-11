@@ -1,0 +1,835 @@
+/* --- Variables CSS para manejo de colores (más fácil para cambiar) --- */
+:root {
+    --bg-dark: #121212; /* Fondo muy oscuro, casi negro */
+    --bg-medium: #1e1e1e; /* Fondo de secciones */
+    --bg-light: #2a2a2a; /* Fondo de tarjetas/elementos */
+    --text-primary: #e0e0e0; /* Color principal del texto */
+    --text-secondary: #a0a0a0; /* Color secundario del texto */
+    --accent-red: #DC143C; /* ¡ROJO VIBRANTE PARA ACENTOS! (Crimson) */
+    --accent-red-hover: #FF4444; /* Rojo más claro para hover */
+    --accent-blue: #007bff; /* Azul clásico para botones secundarios */
+    --accent-blue-hover: #0056b3; /* Azul más oscuro para hover */
+    --accent-green: #4CAF50; /* Verde para puntos */
+    --border-light: #444; /* Borde sutil */
+    --shadow-dark: rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    --font-heading: 'Formula1 Display Wide', 'Formula1 Display Bold', 'Formula1 Display Regular', 'Audiowide', Arial, sans-serif; /* Fuentes para títulos */
+    --font-body: 'Roboto', Arial, sans-serif; /* Fuente para texto general */
+}
+
+/* --- IMPORTANTE: Configuración de la fuente 'Formula1' --- */
+/* Las rutas asumen que tus archivos de fuente están en la carpeta 'resources' */
+@font-face {
+    font-family: 'Formula1 Display Regular';
+    src: url('resources/F1_Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Formula1 Display Bold';
+    src: url('resources/F1_Torque.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Formula1 Display Wide';
+    src: url('resources/F1_Turbo.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer se quede abajo */
+}
+
+header {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-red);
+    box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.f1-logo, .roblox-logo {
+    max-height: 80px;
+    vertical-align: middle;
+}
+
+.x-divider {
+    color: var(--text-primary);
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+header h1 {
+    margin: 10px 0 20px;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-red);
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--bg-medium);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-dark);
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    color: var(--accent-red);
+    font-family: var(--font-heading);
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 10px;
+}
+
+/* --- Botones Generales --- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: var(--accent-red);
+    color: var(--f1-white); /* Asumiendo que f1-white es una variable o un color definido */
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--accent-blue);
+    color: var(--f1-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-blue-hover);
+    transform: translateY(-2px);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* --- Hero Section (index.html) --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('resources/hero_bg.jpg') no-repeat center center/cover;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px var(--shadow-dark);
+}
+
+.hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    border-bottom: none; /* Eliminar borde del h2 */
+    padding-bottom: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* --- Piloto Destacado (index.html) --- */
+#piloto-destacado-section {
+    text-align: center;
+}
+
+.piloto-destacado-card {
+    background-color: var(--bg-dark);
+    border: 2px solid var(--accent-red);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.piloto-destacado-card:hover {
+    transform: translateY(-5px);
+}
+
+.piloto-destacado-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--text-primary);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.piloto-destacado-card h3 {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.piloto-destacado-card p {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* --- Noticias (index.html y noticias.html) --- */
+.news-grid { /* Para index.html */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.news-list-container { /* Para noticias.html */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.news-card, .news-article {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-card:hover, .news-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.news-card h3, .news-article h3 {
+    color: var(--accent-red);
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.news-card .news-meta, .news-article .news-meta {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.news-content-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.news-content-wrapper p {
+    color: var(--text-primary);
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.news-content-wrapper .full-content.hidden {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.news-content-wrapper .full-content:not(.hidden) {
+    max-height: 500px; /* Un valor grande para que se vea todo */
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.news-content-wrapper .short-content.hidden {
+    display: none;
+}
+
+.toggle-content-btn {
+    background-color: var(--accent-blue);
+    color: var(--f1-white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.toggle-content-btn:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* --- Sección Próxima Carrera (index.html) --- */
+.call-to-action-section {
+    text-align: center;
+    background-color: var(--bg-dark);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--accent-red);
+    box-shadow: 0 5px 15px var(--shadow-dark);
+}
+
+.call-to-action-section h2 {
+    color: var(--text-primary);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.call-to-action-section p {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.call-to-action-section .race-date, .call-to-action-section .race-location {
+    font-weight: bold;
+    color: var(--accent-red);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+
+/* --- Galería de Corredores (posters.html) --- */
+.poster-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.racer-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.racer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.racer-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-red);
+    margin-bottom: 10px;
+}
+
+.racer-card h3 {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.racer-card p {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+
+/* --- Tabla de Posiciones y Piloto Destacado en Puntajes (puntajes.html) --- */
+.standings-section {
+    text-align: center;
+}
+
+.driver-highlight {
+    background-color: var(--bg-dark);
+    border: 2px solid var(--accent-red);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px auto 40px;
+    max-width: 600px;
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 150px; /* Asegura un tamaño mínimo */
+}
+
+.driver-highlight .pos {
+    font-family: var(--font-heading);
+    font-size: 4em;
+    color: var(--accent-red);
+    margin-right: 20px;
+    line-height: 1;
+}
+
+.driver-highlight .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.driver-highlight .name {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.driver-highlight .team {
+    font-size: 1.2em;
+    color: var(--text-secondary);
+}
+
+.driver-highlight .points {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    color: var(--accent-green);
+    margin-left: 20px;
+    white-space: nowrap; /* Evita que el texto de puntos se rompa */
+}
+
+.driver-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Para que el border-radius se aplique bien */
+}
+
+.driver-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.3s ease;
+}
+
+.driver-list li:last-child {
+    border-bottom: none;
+}
+
+.driver-list li:hover {
+    background-color: #2a2a2a;
+}
+
+.driver-list .pos {
+    font-weight: bold;
+    color: var(--accent-red);
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.driver-list .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+    margin: 0 15px;
+}
+
+.driver-list .name {
+    font-weight: bold;
+    color: var(--text-primary);
+    font-size: 1.1em;
+}
+
+.driver-list .team {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.driver-list .points {
+    font-weight: bold;
+    color: var(--accent-green);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.driver-list .top-driver {
+    background-color: var(--accent-red); /* Fondo rojo para el top driver */
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.driver-list .top-driver .pos,
+.driver-list .top-driver .info span,
+.driver-list .top-driver .points {
+    color: var(--f1-white); /* Texto blanco para el top driver */
+}
+
+
+/* --- Mensaje de Error/No Data --- */
+.error-section, .no-data {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid var(--accent-red);
+}
+.error-section h2 {
+    color: var(--accent-red);
+}
+
+
+footer {
+    background-color: #000;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 3px solid var(--accent-red);
+    box-shadow: 0 -4px 8px var(--shadow-dark);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+    main {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    section h2 {
+        font-size: 1.8em;
+    }
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .piloto-destacado-card {
+        max-width: 300px;
+        padding: 20px;
+    }
+    .piloto-destacado-card img {
+        width: 100px;
+        height: 100px;
+    }
+    .piloto-destacado-card h3 {
+        font-size: 1.5em;
+    }
+    .news-grid, .poster-gallery {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+    .news-card h3, .news-article h3 {
+        font-size: 1.3em;
+    }
+    .toggle-content-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .driver-highlight {
+        flex-direction: column; /* Columna en móviles */
+        text-align: center;
+        align-items: center;
+        min-height: auto;
+    }
+    .driver-highlight .pos {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .driver-highlight .content {
+        flex-direction: column;
+    }
+    .driver-highlight .name {
+        font-size: 2em;
+        text-align: center;
+    }
+    .driver-highlight .team {
+        text-align: center;
+    }
+    .driver-highlight .points {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    .driver-list li {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .driver-list .pos, .driver-list .info, .driver-list .points {
+        margin: 5px 0;
+        width: auto;
+    }
+    .driver-list .name {
+        width: 100%;
+        text-align: center;
+    }
+    .driver-list .team {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav a {
+        margin: 0;
+        padding: 5px 0;
+        border-bottom: none;
+    }
+    nav a:hover, nav a.active {
+        border-bottom: none;
+        color: var(--accent-red);
+    }
+    section {
+        padding: 15px;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .piloto-destacado-card {
+        padding: 15px;
+    }
+    .piloto-destacado-card h3 {
+        font-size: 1.3em;
+    }
+    .news-card h3, .news-article h3 {
+        font-size: 1.3em;
+    }
+}
+/* --- ESTILOS PARA LA NUEVA SECCIÓN DE CORREDORES (FOTOS DE PERFIL) --- */
+.racer-profile-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Más pequeñas para perfiles */
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+.racer-profile-card {
+    background-color: var(--bg-medium);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.racer-profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.racer-profile-card img {
+    width: 100px; /* Tamaño más chico para fotos de perfil */
+    height: 100px;
+    border-radius: 50%; /* Redondo */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--accent-red);
+}
+
+.racer-profile-card h3 {
+    color: var(--text-primary);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.racer-profile-card p {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS PARA LA NUEVA SECCIÓN DE GALERÍA DE POSTERS --- */
+.posters-gallery-section {
+    padding: 20px;
+    background-color: var(--bg-medium);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-dark);
+    margin-bottom: 20px;
+}
+
+.poster-display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tamaño para posters */
+    gap: 25px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+}
+
+.poster-item {
+    background-color: var(--bg-medium);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Para que el texto quede abajo si la imagen no ocupa todo */
+    position: relative; /* Para el posible título superpuesto */
+}
+
+.poster-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.poster-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+}
+
+.poster-item .poster-title {
+    position: absolute; /* Para superponerlo */
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el texto */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 0 0 8px 8px;
+}
+
+/* --- ESTILOS PARA IMÁGENES EN TABLA DE PUNTAJES --- */
+.driver-highlight .content .driver-highlight-img {
+    width: 60px; /* Tamaño de la imagen del destacado */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--accent-red);
+}
+
+.driver-list .info .driver-list-img {
+    width: 40px; /* Tamaño de la imagen en la lista */
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid var(--text-secondary);
+}
+
+/* Ajustes de flexbox para el contenido del driver-highlight para que la imagen quede bien */
+.driver-highlight .content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+    justify-content: center; /* Centrar en móvil */
+}
+
+.driver-list li .info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Para que ocupe espacio y empuje los puntos */
+}

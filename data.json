@@ -1,0 +1,69 @@
+{
+    "nextPilotoId": 6,
+    "pilotos": [
+      {
+        "id": 1,
+        "nombre": "Lucas Zalazar",
+        "equipo": "Red Bull Racing",
+        "puntos": 77,
+        "imagen": "lucas zalazar.png",
+        "poster": "poster_lucas.png",
+        "destacado": true
+      },
+      {
+        "id": 2,
+        "nombre": "Nacho Quiróz",
+        "equipo": "Sauber",
+        "puntos": 0,
+        "imagen": "nacho quiroz.png",
+        "poster": "poster_nacho.png",
+        "destacado": false
+      },
+      {
+        "id": 3,
+        "nombre": "Bruno Quercia",
+        "equipo": "McLaren",
+        "puntos": 0,
+        "imagen": "bruno quercia.png",
+        "poster": "poster_bruno.png",
+        "destacado": false
+      },
+      {
+        "id": 4,
+        "nombre": "Máximo Zapata",
+        "equipo": "Ferrari",
+        "puntos": 0,
+        "imagen": "maximo zapata.png",
+        "poster": "poster_zapata.png",
+        "destacado": false
+      },
+      {
+        "id": 5,
+        "nombre": "Bruno Gonzalez",
+        "equipo": "Red Bull Racing",
+        "puntos": 0,
+        "imagen": "gonzalez.png",
+        "poster": "poster_gonzalez.png",
+        "destacado": false
+      }
+    ],
+    "nextNoticiaId": 3,
+    "noticias": [
+      {
+        "id": 2,
+        "titulo": "Grandes expectativas para la próxima carrera en el Circuito Urbano",
+        "fecha": "8 de Junio de 2025",
+        "autor": "El Pit Lane",
+        "contenidoCorto": "Se viene la segunda fecha del campeonato y los pilotos ya calientan motores para el desafío del Circuito Urbano. Esta pista, conocida por sus curvas cerradas y sus muros cercanos, pondrá a prueba la precisión de cada corredor. ¿Quién logrará la pole position? ¿Habrá sorpresas en la estrategia? ¡No te la pierdas!",
+        "contenidoCompleto": "El Circuito Urbano es un verdadero desafío para los pilotos y sus equipos. La menor cantidad de zonas de escape y la proximidad de los muros hacen que cada error se pague caro. La gestión de los neumáticos será un factor crucial, y la posibilidad de un Safety Car es alta debido a la naturaleza de la pista. Los fanáticos están ansiosos por ver quién se adapta mejor a este desafío urbano. ¡La emoción está garantizada!"
+      },
+      {
+        "id": 1,
+        "titulo": "¡Lucas Zalazar se lleva la primera victoria en el GP de Robloxia!",
+        "fecha": "10 de Junio de 2025",
+        "autor": "El Relator",
+        "contenidoCorto": "En una carrera llena de emoción y vuelcos inesperados, Lucas Zalazar demostró su habilidad al volante y se impuso con autoridad en el primer Gran Premio de la temporada del Torneo de F1 Roblox. Desde la pole, Lucas mantuvo la calma y supo gestionar la presión de sus perseguidores...",
+        "contenidoCompleto": "La largada fue limpia, con Lucas defendiendo su posición de forma impecable. Detrás, Bruno Quercia y Máximo Zapata luchaban rueda a rueda por el segundo puesto, protagonizando adelantamientos espectaculares. Las estrategias de pit stop fueron clave, con algunos equipos arriesgando con gomas blandas en el tramo final, mientras que otros optaron por la seguridad. Nacho Quiróz tuvo una destacada actuación remontando varias posiciones tras un inicio complicado. Bruno Gonzalez, por su parte, mostró un ritmo consistente que lo posiciona como un contendiente fuerte para las próximas carreras. Al final, Lucas cruzó la meta con una ventaja cómoda, celebrando su primera victoria y estableciéndose como el hombre a vencer. ¡El campeonato promete ser apasionante!"
+      }
+    ]
+  }

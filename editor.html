@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Datos - Torneo F1 Roblox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo_editor.css">
+</head>
+<body>
+    <h1>Administrador de Torneo F1 Roblox</h1>
+
+    <div class="section-container">
+        <div class="panel">
+            <h2>Gestión de Pilotos</h2>
+            <form id="piloto-form">
+                <input type="hidden" id="piloto-id">
+                <label for="piloto-nombre">Nombre del Piloto:</label>
+                <input type="text" id="piloto-nombre" placeholder="Ej: Lucas Zalazar" required>
+
+                <label for="piloto-equipo">Equipo:</label>
+                <input type="text" id="piloto-equipo" placeholder="Ej: Red Bull Racing" required>
+
+                <label for="piloto-puntos">Puntos:</label>
+                <input type="number" id="piloto-puntos" value="0" min="0" required>
+
+                <label for="piloto-imagen">URL de Imagen (ej: resources/1.jpg):</label>
+                <input type="text" id="piloto-imagen" placeholder="resources/nombre-piloto.jpg" required>
+
+                <label for="piloto-poster">URL de Poster (ej: resources/poster_lucas.jpg):</label>
+                <input type="text" id="piloto-poster" placeholder="resources/poster_nombre-piloto.jpg" required>
+
+                <label for="piloto-destacado">Piloto Destacado (en Inicio):</label>
+                <input type="checkbox" id="piloto-destacado">
+                
+                <div class="button-group">
+                    <button type="submit" class="btn-add" id="btn-add-piloto">Agregar Piloto</button>
+                    <button type="button" class="btn-update" id="btn-update-piloto" style="display: none;">Actualizar Piloto</button>
+                    <button type="button" class="btn-cancel" id="btn-cancel-piloto" style="display: none;">Cancelar Edición</button>
+                </div>
+            </form>
+
+            <h3>Lista de Pilotos</h3>
+            <ul id="pilotos-list" class="item-list">
+                </ul>
+        </div>
+
+        <div class="panel">
+            <h2>Gestión de Noticias</h2>
+            <form id="noticia-form">
+                <input type="hidden" id="noticia-id">
+                <label for="noticia-titulo">Título:</label>
+                <input type="text" id="noticia-titulo" placeholder="Ej: ¡Gran victoria de Lucas!" required>
+
+                <label for="noticia-fecha">Fecha:</label>
+                <input type="text" id="noticia-fecha" placeholder="Ej: 10 de Junio de 2025" required>
+
+                <label for="noticia-autor">Autor:</label>
+                <input type="text" id="noticia-autor" placeholder="Ej: El Relator" required>
+
+                <label for="noticia-contenido-corto">Contenido Corto (para inicio):</label>
+                <textarea id="noticia-contenido-corto" placeholder="Resumen de la noticia..." required></textarea>
+
+                <label for="noticia-contenido-completo">Contenido Completo:</label>
+                <textarea id="noticia-contenido-completo" placeholder="Texto completo de la noticia..."></textarea>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn-add" id="btn-add-noticia">Agregar Noticia</button>
+                    <button type="button" class="btn-update" id="btn-update-noticia" style="display: none;">Actualizar Noticia</button>
+                    <button type="button" class="btn-cancel" id="btn-cancel-noticia" style="display: none;">Cancelar Edición</button>
+                </div>
+            </form>
+
+            <h3>Lista de Noticias</h3>
+            <ul id="noticias-list" class="item-list">
+                </ul>
+        </div>
+    </div>
+
+    <div class="panel json-output-panel">
+        <h2>Generar y Descargar Archivo de Datos (data.json)</h2>
+        <p>Una vez que hayas terminado de editar, haz clic en "Generar y Descargar JSON" para guardar el archivo.</p>
+        <div class="action-buttons">
+            <button id="generateAndDownloadJsonBtn" class="btn-add">Generar y Descargar JSON</button>
+        </div>
+        <div id="json-output-container" style="display: none;">
+            <textarea id="json-output" readonly></textarea>
+            <button id="copyJsonBtn" class="btn-update">Copiar JSON al Portapapeles</button>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>
