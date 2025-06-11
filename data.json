@@ -1,69 +1,82 @@
 {
-    "nextPilotoId": 6,
-    "pilotos": [
-      {
-        "id": 1,
-        "nombre": "Lucas Zalazar",
-        "equipo": "Red Bull Racing",
-        "puntos": 77,
-        "imagen": "lucas zalazar.png",
-        "poster": "poster_lucas.png",
-        "destacado": true
-      },
-      {
-        "id": 2,
-        "nombre": "Nacho Quiróz",
-        "equipo": "Sauber",
-        "puntos": 0,
-        "imagen": "nacho quiroz.png",
-        "poster": "poster_nacho.png",
-        "destacado": false
-      },
-      {
-        "id": 3,
-        "nombre": "Bruno Quercia",
-        "equipo": "McLaren",
-        "puntos": 0,
-        "imagen": "bruno quercia.png",
-        "poster": "poster_bruno.png",
-        "destacado": false
-      },
-      {
-        "id": 4,
-        "nombre": "Máximo Zapata",
-        "equipo": "Ferrari",
-        "puntos": 0,
-        "imagen": "maximo zapata.png",
-        "poster": "poster_zapata.png",
-        "destacado": false
-      },
-      {
-        "id": 5,
-        "nombre": "Bruno Gonzalez",
-        "equipo": "Red Bull Racing",
-        "puntos": 0,
-        "imagen": "gonzalez.png",
-        "poster": "poster_gonzalez.png",
-        "destacado": false
-      }
-    ],
-    "nextNoticiaId": 3,
-    "noticias": [
-      {
-        "id": 2,
-        "titulo": "Grandes expectativas para la próxima carrera en el Circuito Urbano",
-        "fecha": "8 de Junio de 2025",
-        "autor": "El Pit Lane",
-        "contenidoCorto": "Se viene la segunda fecha del campeonato y los pilotos ya calientan motores para el desafío del Circuito Urbano. Esta pista, conocida por sus curvas cerradas y sus muros cercanos, pondrá a prueba la precisión de cada corredor. ¿Quién logrará la pole position? ¿Habrá sorpresas en la estrategia? ¡No te la pierdas!",
-        "contenidoCompleto": "El Circuito Urbano es un verdadero desafío para los pilotos y sus equipos. La menor cantidad de zonas de escape y la proximidad de los muros hacen que cada error se pague caro. La gestión de los neumáticos será un factor crucial, y la posibilidad de un Safety Car es alta debido a la naturaleza de la pista. Los fanáticos están ansiosos por ver quién se adapta mejor a este desafío urbano. ¡La emoción está garantizada!"
-      },
-      {
-        "id": 1,
-        "titulo": "¡Lucas Zalazar se lleva la primera victoria en el GP de Robloxia!",
-        "fecha": "10 de Junio de 2025",
-        "autor": "El Relator",
-        "contenidoCorto": "En una carrera llena de emoción y vuelcos inesperados, Lucas Zalazar demostró su habilidad al volante y se impuso con autoridad en el primer Gran Premio de la temporada del Torneo de F1 Roblox. Desde la pole, Lucas mantuvo la calma y supo gestionar la presión de sus perseguidores...",
-        "contenidoCompleto": "La largada fue limpia, con Lucas defendiendo su posición de forma impecable. Detrás, Bruno Quercia y Máximo Zapata luchaban rueda a rueda por el segundo puesto, protagonizando adelantamientos espectaculares. Las estrategias de pit stop fueron clave, con algunos equipos arriesgando con gomas blandas en el tramo final, mientras que otros optaron por la seguridad. Nacho Quiróz tuvo una destacada actuación remontando varias posiciones tras un inicio complicado. Bruno Gonzalez, por su parte, mostró un ritmo consistente que lo posiciona como un contendiente fuerte para las próximas carreras. Al final, Lucas cruzó la meta con una ventaja cómoda, celebrando su primera victoria y estableciéndose como el hombre a vencer. ¡El campeonato promete ser apasionante!"
-      }
-    ]
-  }
+  "nextPilotoId": 6,
+  "pilotos": [
+    {
+      "id": 1,
+      "nombre": "Lucas Zalazar",
+      "equipo": "Red Bull Racing",
+      "puntos": 77,
+      "imagen": "resources/lucas zalazar.jpg",
+      "poster": "resources/poster_lucas.jpg",
+      "destacado": true,
+      "estado": "activo"
+    },
+    {
+      "id": 4,
+      "nombre": "Máximo Zapata",
+      "equipo": "Ferrari",
+      "puntos": 22,
+      "imagen": "maximo zapata.jpg",
+      "poster": "poster_zapata.jpg",
+      "destacado": false,
+      "estado": "activo"
+    },
+    {
+      "id": 3,
+      "nombre": "Bruno Quercia",
+      "equipo": "McLaren",
+      "puntos": 15,
+      "imagen": "bruno quercia.jpg",
+      "poster": "poster_bruno.jpg",
+      "destacado": false,
+      "estado": "activo"
+    },
+    {
+      "id": 5,
+      "nombre": "Bruno Gonzalez",
+      "equipo": "Red Bull Racing",
+      "puntos": 10,
+      "imagen": "gonzalez.jpg",
+      "poster": "poster_gonzalez.jpg",
+      "destacado": false,
+      "estado": "activo"
+    },
+    {
+      "id": 2,
+      "nombre": "Nacho Quiróz",
+      "equipo": "Sauber",
+      "puntos": 0,
+      "imagen": "nacho quiroz.jpg",
+      "poster": "poster_nacho.jpg",
+      "destacado": false,
+      "estado": "def"
+    }
+  ],
+  "nextNoticiaId": 4,
+  "noticias": [
+    {
+      "id": 2,
+      "titulo": "¡Gran Premio de Mónaco: La pista más desafiante!",
+      "fecha": "12 de Junio de 2025",
+      "autor": "El Analista",
+      "contenidoCorto": "El próximo Gran Premio se disputará en el icónico circuito de Mónaco, conocido por sus curvas cerradas y la dificultad para adelantar. Los pilotos deberán demostrar su precisión y valentía para dominar esta pista urbana legendaria...",
+      "contenidoCompleto": "El Gran Premio de Mónaco es una joya en el calendario de la F1 Roblox. Su trazado estrecho y sinuoso no perdona errores. La clasificación será crucial, ya que adelantar es casi imposible. Los equipos estarán analizando cada milisegundo en las tandas de práctica para encontrar la configuración perfecta. La posibilidad de un Safety Car es alta debido a la naturaleza de la pista. Los fanáticos están ansiosos por ver quién se adapta mejor a este desafío urbano. ¡La emoción está garantizada!"
+    },
+    {
+      "id": 1,
+      "titulo": "¡Lucas Zalazar se lleva la primera victoria en el GP de Robloxia!",
+      "fecha": "10 de Junio de 2025",
+      "autor": "El Relator",
+      "contenidoCorto": "En una carrera llena de emoción y vuelcos inesperados, Lucas Zalazar demostró su habilidad al volante y se impuso con autoridad en el primer Gran Premio de la temporada del Torneo de F1 Roblox. Desde la pole, Lucas mantuvo la calma y supo gestionar la presión de sus perseguidores...",
+      "contenidoCompleto": "La largada fue limpia, con Lucas defendiendo su posición de forma impecable. Detrás, Bruno Quercia y Máximo Zapata luchaban rueda a rueda por el segundo puesto, protagonizando adelantamientos espectaculares. Las estrategias de pit stop fueron clave, con algunos equipos arriesgando con gomas blandas en el tramo final, mientras que otros optros optaron por la seguridad. Nacho Quiróz tuvo una destacada actuación remontando varias posiciones tras un inicio complicado. Bruno Gonzalez, por su parte, mostró un ritmo consistente que lo posiciona como un contendiente fuerte para las próximas carreras. Al final, Lucas cruzó la meta con una ventaja cómoda, celebrando su primera victoria y estableciéndose como el hombre a vencer. ¡El campeonato promete ser apasionante!"
+    },
+    {
+      "id": 3,
+      "titulo": "Lucas Zalazar se olvidó que estaba corriendo y frenó para comprar una empanada",
+      "fecha": "11 de junio de 2025",
+      "autor": "croff",
+      "contenidoCorto": "En plena carrera de F1, el piloto argentino Lucas Zalazar frenó en la curva 4 al ver un puestito de empanadas. “Tenía hambre, ¿qué quieren que haga?”, declaró.",
+      "contenidoCompleto": "La Fórmula 1 vivió hoy uno de los momentos más insólitos de la temporada cuando el piloto argentino Lucas Zalazar, representante del ficticio equipo Empanator GP, frenó en plena curva 4 del circuito de Montreal para bajarse del auto y comprar una empanada.\n\nEl hecho ocurrió en la vuelta 32, mientras luchaba por el puesto 14. \"Vi el puestito al costado del circuito y no lo dudé. Olía a carne cortada a cuchillo\", dijo Lucas en la entrevista post-carrera mientras terminaba su empanada con ají.\n\nAunque recibió una penalización de 10 segundos y terminó último, el equipo lo respaldó: \"Somos un equipo con valores. Si hay hambre, se frena\", dijo el jefe de equipo.\nLa FIA está considerando prohibir ventas de comida dentro del circuito, mientras Lucas propone lo contrario: “Yo pondría una parrilla en boxes, ¿no te parece?”."
+    }
+  ]
+}
