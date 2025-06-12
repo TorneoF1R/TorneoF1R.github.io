@@ -12,14 +12,14 @@
       "estado": "activo"
     },
     {
-      "id": 4,
-      "nombre": "Máximo Zapata",
-      "equipo": "Ferrari",
-      "puntos": 22,
-      "imagen": "maximo zapata.png",
-      "poster": "poster_zapata.png",
+      "id": 2,
+      "nombre": "Nacho Quiróz",
+      "equipo": "Sauber",
+      "puntos": 0,
+      "imagen": "nacho quiroz.png",
+      "poster": "poster_nacho.png",
       "destacado": false,
-      "estado": "activo"
+      "estado": "def"
     },
     {
       "id": 3,
@@ -32,6 +32,16 @@
       "estado": "activo"
     },
     {
+      "id": 4,
+      "nombre": "Máximo Zapata",
+      "equipo": "Ferrari",
+      "puntos": 22,
+      "imagen": "maximo zapata.png",
+      "poster": "poster_zapata.png",
+      "destacado": false,
+      "estado": "activo"
+    },
+    {
       "id": 5,
       "nombre": "Bruno Gonzalez",
       "equipo": "Red Bull Racing",
@@ -40,43 +50,57 @@
       "poster": "poster_gonzalez.png",
       "destacado": false,
       "estado": "activo"
-    },
-    {
-      "id": 2,
-      "nombre": "Nacho Quiróz",
-      "equipo": "Sauber",
-      "puntos": 0,
-      "imagen": "nacho quiroz.png",
-      "poster": "poster_nacho.png",
-      "destacado": false,
-      "estado": "def"
     }
   ],
-  "nextNoticiaId": 4,
+  "nextNoticiaId": 7,
   "noticias": [
     {
-      "id": 2,
-      "titulo": "¡Gran Premio de Mónaco: La pista más desafiante!",
-      "fecha": "12 de Junio de 2025",
-      "autor": "El Analista",
-      "contenidoCorto": "El próximo Gran Premio se disputará en el icónico circuito de Mónaco, conocido por sus curvas cerradas y la dificultad para adelantar. Los pilotos deberán demostrar su precisión y valentía para dominar esta pista urbana legendaria...",
-      "contenidoCompleto": "El Gran Premio de Mónaco es una joya en el calendario de la F1 Roblox. Su trazado estrecho y sinuoso no perdona errores. La clasificación será crucial, ya que adelantar es casi imposible. Los equipos estarán analizando cada milisegundo en las tandas de práctica para encontrar la configuración perfecta. La posibilidad de un Safety Car es alta debido a la naturaleza de la pista. Los fanáticos están ansiosos por ver quién se adapta mejor a este desafío urbano. ¡La emoción está garantizada!"
+      "id": 6,
+      "titulo": "Mamaní corre sin auriculares: “Escucho la pista, no al ingeniero”",
+      "fecha": "12 de junio de 2025",
+      "autor": "Esteban Céspedes",
+      "contenidoCorto": "En una decisión que dejó a todos boquiabiertos, Mamaní decidió correr sin audio en plena carrera. Terminó séptimo, pero ganó el respeto del paddock.\n",
+      "contenidoCompleto": "Durante las prácticas libres ya se notaba algo raro: Mamaní no respondía a las órdenes de su ingeniero. Se pensó que había un problema técnico, pero luego del clasificatorio confesó:\n\n> “No quiero distracciones. A veces el silencio ayuda a sentir mejor la pista.”\n\n\n\nEn carrera, sin guía por radio, Mamaní improvisó. Usó su intuición para entrar a boxes, hizo una estrategia a una parada sin saber la de sus rivales, y defendió posición como si supiera lo que venía.\n\nAston Martin intentó comunicarse por todos los canales, pero él había silenciado todo. Al bajarse del auto, fue recibido con un aplauso por parte de varios pilotos. Fernando Alonso, en una entrevista, dijo:\n\n> “Eso es viejo estilo. Me recuerda a mí en 2003. Lo banco.”\n\n\n\nEl piloto argentino terminó séptimo, pero su filosofía zen lo volvió ídolo. Ahora es apodado “El Samurai Verde”."
     },
     {
-      "id": 1,
-      "titulo": "¡Lucas Zalazar se lleva la primera victoria en el GP de Robloxia!",
-      "fecha": "10 de Junio de 2025",
-      "autor": "El Relator",
-      "contenidoCorto": "En una carrera llena de emoción y vuelcos inesperados, Lucas Zalazar demostró su habilidad al volante y se impuso con autoridad en el primer Gran Premio de la temporada del Torneo de F1 Roblox. Desde la pole, Lucas mantuvo la calma y supo gestionar la presión de sus perseguidores...",
-      "contenidoCompleto": "La largada fue limpia, con Lucas defendiendo su posición de forma impecable. Detrás, Bruno Quercia y Máximo Zapata luchaban rueda a rueda por el segundo puesto, protagonizando adelantamientos espectaculares. Las estrategias de pit stop fueron clave, con algunos equipos arriesgando con gomas blandas en el tramo final, mientras que otros optros optaron por la seguridad. Nacho Quiróz tuvo una destacada actuación remontando varias posiciones tras un inicio complicado. Bruno Gonzalez, por su parte, mostró un ritmo consistente que lo posiciona como un contendiente fuerte para las próximas carreras. Al final, Lucas cruzó la meta con una ventaja cómoda, celebrando su primera victoria y estableciéndose como el hombre a vencer. ¡El campeonato promete ser apasionante!"
+      "id": 5,
+      "titulo": "Lauri lleva ositos de goma al cockpit y Mercedes le agradece el “buff de azúcar”",
+      "fecha": "12 de junio de 2025",
+      "autor": "Martina Vico",
+      "contenidoCorto": "El piloto de Mercedes pidió comer gomitas antes de correr. Su rendimiento aumentó... y el equipo ya considera “protocolizar” la dieta.\n",
+      "contenidoCompleto": "Antes del GP de San Fiorenzo, Lauri solicitó al equipo técnico un “detallito” poco común: una bolsita de gomitas dentro del cockpit. “Las necesito para mantener la calma en la largada”, explicó. El equipo aceptó, pensando que era una broma… hasta que lo vieron comer una justo antes de la formación.\n\nLo que vino después fue una de sus mejores carreras: tres adelantamientos quirúrgicos, una defensa de dos vueltas contra Nacho, y una parada perfecta. Finalizó segundo, a menos de 1 segundo del primero.\n\nEl ingeniero jefe de Mercedes comentó entre risas:\n\n> “Pensamos que era placebo, pero ese chico corre como si cada vuelta fuera por otro osito más.”"
+    },
+    {
+      "id": 4,
+      "titulo": "Eric grita “¡FORZA FERRARI!” y termina en el muro",
+      "fecha": "12 de junio de 2025",
+      "autor": "Luciano Gaitán",
+      "contenidoCorto": "El piloto de Ferrari celebró antes de tiempo, perdió el control y chocó a metros de la bandera a cuadros.",
+      "contenidoCompleto": "Todo indicaba que Eric se llevaría la victoria más poética de su temporada. Había hecho una carrera limpia, estratégica, y con la garra de quien representa a Ferrari en su corazón. Sin embargo, cuando apareció la última curva y vio la meta… algo se desató.\n\nActivó el botón de radio y gritó eufórico:\n“¡FORZA FERRARI, VAMOS CARAJO!”\n\nEn ese mismo instante, el auto se desestabilizó tras pisar la parte sucia de la pista. El SF-25 salió de control y se estrelló levemente contra las protecciones, a sólo 30 metros de la línea de meta. El segundo lo pasó mientras Eric intentaba poner reversa sin éxito.\n\n“Leclerc estaría orgulloso”, bromeó un fan en X (ex-Twitter). Los memes no tardaron en aparecer con montajes de Eric abrazando al muro. Ferrari, por su parte, publicó un mensaje:\n\n> “Preferimos pilotos apasionados que se la juegan… aunque rompan un alerón.”"
     },
     {
       "id": 3,
-      "titulo": "Lucas Zalazar se olvidó que estaba corriendo y frenó para comprar una empanada",
-      "fecha": "11 de junio de 2025",
-      "autor": "croff",
-      "contenidoCorto": "En plena carrera de F1, el piloto argentino Lucas Zalazar frenó en la curva 4 al ver un puestito de empanadas. “Tenía hambre, ¿qué quieren que haga?”, declaró.",
-      "contenidoCompleto": "La Fórmula 1 vivió hoy uno de los momentos más insólitos de la temporada cuando el piloto argentino Lucas Zalazar, representante del ficticio equipo Empanator GP, frenó en plena curva 4 del circuito de Montreal para bajarse del auto y comprar una empanada.\n\nEl hecho ocurrió en la vuelta 32, mientras luchaba por el puesto 14. \"Vi el puestito al costado del circuito y no lo dudé. Olía a carne cortada a cuchillo\", dijo Lucas en la entrevista post-carrera mientras terminaba su empanada con ají.\n\nAunque recibió una penalización de 10 segundos y terminó último, el equipo lo respaldó: \"Somos un equipo con valores. Si hay hambre, se frena\", dijo el jefe de equipo.\nLa FIA está considerando prohibir ventas de comida dentro del circuito, mientras Lucas propone lo contrario: “Yo pondría una parrilla en boxes, ¿no te parece?”."
+      "titulo": "Quercia se pasa de largo… ¡en la vuelta de formación!",
+      "fecha": "12 de junio de 2025",
+      "autor": "Damián Contreras",
+      "contenidoCorto": "El piloto de McLaren confundió la vuelta de formación con la carrera y aceleró como si fuera la vuelta 55.",
+      "contenidoCompleto": "En una escena digna de comedia, Quercia rompió todos los récords de velocidad… en la vuelta de formación. Mientras los demás autos iban calentando neumáticos a paso moderado, el McLaren naranja de Quercia salió disparado en la recta principal como si estuviera peleando el primer puesto contra Hamilton en Silverstone.\n\n“Vi que uno pisó el piano y pensé que era el momento de atacar”, declaró Quercia, todavía desconcertado. Tardó dos vueltas en notar que la carrera no había comenzado, y para ese entonces ya había bloqueado a tres pilotos, cruzado el pitlane sin motivo y activado el DRS por error.\n\nDesde McLaren trataron de bajarle el tono a la situación: “Es un chico con hambre de gloria... a veces se la come cruda.”\n\nEl resto de la carrera fue digno de una remontada: largó último por sanción y terminó sexto, regalando adelantamientos limpios. Ahora los fans piden que Quercia sea el nuevo \"Piastri loco\"."
+    },
+    {
+      "id": 2,
+      "titulo": "Nacho gana sin gasolina: “Empujé en la última recta, y sirvió”",
+      "fecha": "12 de junio de 2025",
+      "autor": "Micaela Tornatti",
+      "contenidoCorto": "El final más insólito del torneo: Nacho se quedó sin combustible, bajó del auto, y empujó hasta cruzar la meta. Lo llaman “El Hülkenberg argentino”.",
+      "contenidoCompleto": "Lo que parecía una cómoda victoria para Nacho terminó convirtiéndose en la hazaña más insólita de la temporada. Lideraba con más de 8 segundos de ventaja y venía con ritmo sólido. Sin embargo, su equipo calculó mal el consumo de combustible… y a 200 metros de la línea de meta, el motor del Kick Sauber dijo basta.\n\n“Primero pensé que era un bug”, confesó Nacho entre risas. “Pero cuando vi que no respondía más, me bajé y empujé. No iba a perder por eso”.\n\nLos espectadores virtuales se volvieron locos: el chat explotó con frases como “¡El verdadero Gasly fitness!” y “Ni Alonso empuja así”. El piloto argentino cruzó la línea con medio cuerpo por delante del segundo, y luego cayó de rodillas.\n\nLos comisarios revisaron la maniobra, pero la FIA confirmó que empujar el coche manualmente en Roblox no infringe ninguna norma... por ahora."
+    },
+    {
+      "id": 1,
+      "titulo": "Lucas le grita a su ingeniero: “¡No soy Verstappen, soy yo!”",
+      "fecha": "12 de junio de 2025",
+      "autor": "Agustín Roldán",
+      "contenidoCorto": "Luego de una mala parada en boxes, Lucas estalló por radio. Su equipo lo comparaba con Verstappen, y él respondió con una frase que ya es meme.",
+      "contenidoCompleto": "Lucas venía teniendo una carrera prolija en el GP de Robloxia, peleando el podio contra pilotos de alto calibre. Su ritmo era constante, su trazada limpia, y hasta había hecho un sobrepaso doble que lo catapultó al tercer puesto. Todo iba bien… hasta que llegó a boxes.\n\nUna parada que debía durar poco más de 2.5 segundos se transformó en un calvario de 11 segundos. “No encontrábamos la rueda delantera izquierda”, declaró un mecánico con tono de vergüenza. Desde el pitwall, se escuchó un comentario captado por la transmisión: “Max ya estaría en pista hace rato”.\n\nLa respuesta de Lucas, sin filtros, hizo historia en la F1 amateur:\n“¡NO SOY VERSTAPPEN, SOY YO, PE-LU-CA!”\n\nEl audio no tardó en viralizarse, y ya tiene remix en TikTok. Mientras tanto, Red Bull emitió un comunicado interno indicando que los ingenieros deberán usar nombres reales de pilotos a partir de ahora. Lucas terminó quinto, pero con dignidad intacta."
     }
   ]
 }
